@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily persona drift check timer
+Documentation=https://github.com/j0yen/persona-deploy-doctor
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+RandomizedDelaySec=1800
+
+[Install]
+WantedBy=timers.target

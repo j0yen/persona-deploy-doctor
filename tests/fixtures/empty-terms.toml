@@ -1,0 +1,6 @@
+# Fixture: empty-terms — forbidden_terms is empty
+[persona]
+self_name = "Clara"
+wake_word = "wintermute"
+redline = "safe-phrase"
+forbidden_terms = []

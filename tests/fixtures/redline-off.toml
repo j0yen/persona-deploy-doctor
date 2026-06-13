@@ -1,0 +1,6 @@
+# Fixture: redline-off — redline is disabled
+[persona]
+self_name = "Clara"
+wake_word = "wintermute"
+redline = "off"
+forbidden_terms = ["AI", "computer"]

@@ -1,0 +1,28 @@
+# expected.example.toml — Documents the expected-state file shape for persona-deploy-doctor
+#
+# This file is read alongside brain.toml to verify the deployed persona
+# matches what was intentionally configured. Copy this to expected.toml and
+# fill in the values that persona-deploy-jocelyn set at deploy time.
+#
+# The doctor checks each field below against the live brain.toml; any
+# mismatch is drift and triggers exit 1 (or a wm.persona.drift bus event
+# from the systemd timer).
+
+[persona]
+# The warm persona name configured at deploy time (must NOT be "wintermute").
+# Passed via --expect-self-name at the CLI, or set here for the timer.
+self_name = "Clara"
+
+# The wake word configured at deploy time.
+# Passed via --expect-wake-word at the CLI (optional check).
+wake_word = "wintermute"
+
+# redline must be any non-Off value.
+# The doctor checks that redline != Off/absent regardless of this file.
+# A string value like "safe-phrase" means the user must speak this phrase
+# before the AI gives any medical/financial/legal advice.
+redline = "safe-phrase"
+
+# forbidden_terms must be non-empty (at minimum, check passes if list has >= 1 entry).
+# The doctor verifies the list is not empty; exact terms are not compared.
+forbidden_terms = ["AI", "computer", "algorithm"]

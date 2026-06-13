@@ -1,0 +1,6 @@
+# Fixture: bad-name — self_name is still "wintermute" (default, not renamed)
+[persona]
+self_name = "wintermute"
+wake_word = "wintermute"
+redline = "safe-phrase"
+forbidden_terms = ["AI", "computer"]

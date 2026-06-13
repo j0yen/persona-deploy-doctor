@@ -1,0 +1,16 @@
+[Unit]
+Description=Persona drift health checker for the Jocelyn elder persona
+Documentation=https://github.com/j0yen/persona-deploy-doctor
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/wintermute/persona-deploy-doctor/doctor.sh --json --expect-self-name Clara
+StandardOutput=journal
+StandardError=journal
+# On drift, publish a wm.persona.drift bus event if agorabus is available.
+# The doctor.sh already handles graceful degradation if agorabus is absent.
+Environment=HOME=%h
+
+[Install]
+WantedBy=default.target

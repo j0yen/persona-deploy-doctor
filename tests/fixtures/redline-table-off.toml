@@ -1,0 +1,8 @@
+# Fixture: redline-table-off — redline as table with action=Off
+[persona]
+self_name = "Clara"
+wake_word = "wintermute"
+forbidden_terms = ["AI", "computer"]
+
+[persona.redline]
+action = "Off"

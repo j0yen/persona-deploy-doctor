@@ -1,0 +1,6 @@
+# Fixture: healthy — fully deployed jocelyn persona
+[persona]
+self_name = "Clara"
+wake_word = "wintermute"
+redline = "safe-phrase"
+forbidden_terms = ["AI", "computer"]
